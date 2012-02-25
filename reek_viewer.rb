@@ -2,22 +2,13 @@ require 'test/unit'
 require 'yaml'
 
 require 'rubygems'
-require 'sinatra'
-
-get '/' do
-  reeks = Parser.new(params[:file_path])
-  @input_file_path = params[:file_path]
-  @reeks = reeks.get_reeks
-  @keys = reeks.get_keys
-  @sum_of_waning_num = reeks.get_sum_of_waning_num
-  
-  Util.out_put_to_file(reeks, params[:file_path])
-  
-  erb :index
-end
+require 'erb'
 
 class Util
-  def self.out_put_to_file(reeks, input_file_path)
+  def self.out_put_to_file
+
+    input_file_path = ARGV.first
+    reeks = Parser.new(input_file_path)
     @input_file_path = input_file_path
     @reeks = reeks.get_reeks
     @keys = reeks.get_keys
@@ -90,3 +81,5 @@ module Reek
     def context_class; location["context"].split("#").first; end
   end
 end
+
+Util.out_put_to_file
