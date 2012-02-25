@@ -20,7 +20,7 @@ class Util
     erb = ERB.new(erb_str)
     html = erb.result(binding)
     
-    open("./" + @input_file_path.split(".").first + ".html", "w"){|f| f.write html }
+    open("./" + @input_file_path + ".html", "w"){|f| f.write html }
   end
 end
 
