@@ -14,7 +14,7 @@ class Util
     @keys = reeks.get_keys
     @sum_of_waning_num = reeks.get_sum_of_waning_num    
     
-    erb = open(Dir::pwd + "view_template.erb.erb")
+    erb = open(Dir::pwd + "/view_template.erb")
     erb_str = erb.read
     
     erb = ERB.new(erb_str)
