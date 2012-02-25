@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="ja-JP">
+<head>
+	<meta charset="UTF-8">
+	<title>reek viewer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<style type="text/css">
+		span#nomal{
+			display: inline-block;
+			width: 7em; 
+			color:midnightblue;
+		}
+		span#caution{
+			display: inline-block;
+			width: 7em; 
+			color:chocolate;
+		}
+		span#danger{
+			display: inline-block;
+			width: 7em; 
+			color:firebrick;
+		}
+		span.aside{
+			margin-right:1em;
+			font-size: small;
+			color:gray;
+		}
+		h3#total{
+			margin-top:10px;
+			margin-bottom:5px;
+		}
+		.slim{
+			margin-top:5px;
+			margin-bottom:20px;
+		}
+		.strong{
+			font-size:large;
+		}
+		.hidden{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="content">
+			<h1>Reek Viewer</h1>
+			<div class="ui-body ui-body-b">
+				<%= @input_file_path %>
+			</div>
+			<div class="ui-body ui-body-b">
+				<h3 id="total">Total</h3>
+				<p class="strong slim">
+					<%= @keys.size %><span class="aside">Class</span>
+					<%= @sum_of_waning_num %><span class="aside">Wanings</span>
+				</p>
+				<hr />
+				<h3 class="hidden">Content</h3>
+				<% @keys.each do |key| %>
+				  <div data-role="collapsible" data-collapsed="true" data-theme="c" data-content-theme="d">
+				    <h4>
+				    	<div class="ui-grid-a">
+				    		<div class="ui-block-a">
+						    	<span><%= key %></span>
+				    		</div>
+				    		<div class="ui-block-b">
+				    			<% if @reeks[key].size < 5 %>
+						    		<span id="nomal"><%= @reeks[key].size %>warnings</span>
+						    	<% elsif @reeks[key].size < 10 %>
+						    		<span id="caution"><%= @reeks[key].size %>warnings</span>
+						    	<% else %>
+						    		<span id="danger"><%= @reeks[key].size %>warnings</span>
+						    	<% end %>
+				    		</div>
+				    	</div>
+				    </h4>
+				    <div>
+				    	<ul data-role="listview" data-inset="true" data-divider-theme="c">
+				    		<li data-role="list-divider">
+				    			File Path
+				    		</li>
+				    		<li>		    			
+				    			<h4><span class="aside">File:</span><%= @reeks[key].first.location["source"].split("/").last %></h4><br>
+				    			<span class="aside">Path:</span><%= @reeks[key].first.location["source"] %>
+				    		</li>
+				    	</ul>
+					    <ul data-role="listview" data-inset="true" data-divider-theme="c">
+					    	<li data-role="list-divider">
+					    		<div class="ui-grid-a">
+					    			<div class="ui-block-a">Location</div>
+					    			<div class="ui-block-b">Warnings</div>
+					    		</div>
+					    	</li>
+					    <% @reeks[key].each do |smell| %>
+					    	<li>
+					    		<div class="ui-grid-a">
+					    			<div class="ui-block-a">
+							    		<h4><%= smell.location["context"] %></h4>
+							    		<span>
+							    		<% location = smell.location["source"].split("/") %>
+							    		</span>
+						    		</div>
+						    		<div class="ui-block-b">
+						    			<span class="aside">line:
+						    				<% if smell.location["lines"].size == 2 %>
+						    					<%= smell.location["lines"].first.to_s %>
+						    					<%= " - " + smell.location["lines"].last.to_s unless smell.location["lines"].first == smell.location["lines"].last %>
+						    				<% else %>
+						    					<%= smell.location["lines"].first %>
+						    				<% end %>
+						    			</span>
+						    			<h4><%= smell.smell["class"] %><%= if smell.smell["class"] != smell.smell["subclass"] then "::"+smell.smell["subclass"] end %></h4>
+							    		<%= smell.smell["message"] %>
+						    		</div>
+					    		</div>
+					    	</li>
+					    <% end %>
+					    </ul>
+				    </div>
+				  </div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
