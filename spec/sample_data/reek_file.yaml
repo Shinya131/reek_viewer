@@ -1,0 +1,353 @@
+--- 
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 22
+    context: Parser
+    source: ../..//reek_parser.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: Parser
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 57
+    - 58
+    - 60
+    context: Parser#reek_add_header
+    source: ../..//reek_parser.rb
+  smell: 
+    class: Duplication
+    occurrences: 3
+    subclass: DuplicateMethodCall
+    call: reek.context_class
+    message: calls reek.context_class 3 times
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 54
+    context: Parser#reek_add_header
+    source: ../..//reek_parser.rb
+  smell: 
+    class: LowCohesion
+    subclass: UtilityFunction
+    message: doesn't depend on instance state
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 54
+    context: Parser#reek_add_header
+    source: ../..//reek_parser.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: reek
+    message: refers to reek more than self
+    references: 3
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 54
+    context: Parser#reek_add_header
+    source: ../..//reek_parser.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: reeks
+    message: refers to reeks more than self
+    references: 3
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 43
+    - 45
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_parser.rb
+  smell: 
+    class: Duplication
+    occurrences: 2
+    subclass: DuplicateMethodCall
+    call: keys.map
+    message: calls keys.map twice
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 44
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_parser.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: a
+    message: has the variable name 'a'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 44
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_parser.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: b
+    message: has the variable name 'b'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 41
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_parser.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: keys
+    message: refers to keys more than self
+    references: 5
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 69
+    context: Reek::SmellWarning
+    source: ../..//reek_parser.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: SmellWarning
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 3
+    context: ReekYamlFile
+    source: ../..//reek_parser.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: ReekYamlFile
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 15
+    context: ReekYamlFile#file_load
+    source: ../..//reek_parser.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: f
+    message: has the variable name 'f'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 27
+    context: Parser
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: Parser
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 68
+    context: Parser#file_to_reek_obj
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: f
+    message: has the variable name 'f'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 58
+    - 59
+    - 61
+    context: Parser#reek_add_header
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: Duplication
+    occurrences: 3
+    subclass: DuplicateMethodCall
+    call: reek.context_class
+    message: calls reek.context_class 3 times
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 55
+    context: Parser#reek_add_header
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: LowCohesion
+    subclass: UtilityFunction
+    message: doesn't depend on instance state
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 55
+    context: Parser#reek_add_header
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: reek
+    message: refers to reek more than self
+    references: 3
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 55
+    context: Parser#reek_add_header
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: reeks
+    message: refers to reeks more than self
+    references: 3
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 44
+    - 46
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: Duplication
+    occurrences: 2
+    subclass: DuplicateMethodCall
+    call: keys.map
+    message: calls keys.map twice
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 45
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: a
+    message: has the variable name 'a'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 45
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: b
+    message: has the variable name 'b'
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 42
+    context: Parser#sort_keys_by_waning_num
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: LowCohesion
+    subclass: FeatureEnvy
+    receiver: keys
+    message: refers to keys more than self
+    references: 5
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 79
+    context: Reek::SmellWarning
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: SmellWarning
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 7
+    context: Util
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    module_name: Util
+    message: has no descriptive comment
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 8
+    context: Util#self.out_put_to_file
+    source: ../..//reek_viewer.rb
+  smell: 
+    statement_count: 11
+    class: LongMethod
+    subclass: TooManyStatements
+    message: has approx 11 statements
+  status: 
+    is_active: true
+- !ruby/object:Reek::SmellWarning 
+  location: 
+    lines: 
+    - 23
+    context: Util#self.out_put_to_file
+    source: ../..//reek_viewer.rb
+  smell: 
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    variable_name: f
+    message: has the variable name 'f'
+  status: 
+    is_active: true
