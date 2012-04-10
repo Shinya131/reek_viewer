@@ -13,6 +13,10 @@ describe Parser do
         @reek_yaml_file.class.should == ReekYamlFile
       end
       
+      it "引数がnilなら、例外発生" do
+        
+      end
+      
       it "引数の文字列がファイルパスとして無効な場合、例外発生" do
         proc {
           @reek_yaml_file =  ReekYamlFile.new("not_file_path_str")

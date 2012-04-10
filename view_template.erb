@@ -59,20 +59,20 @@
 				</p>
 				<hr />
 				<h3 class="hidden">Content</h3>
-				<% @keys.each do |key| %>
+				<% @reeks_list.each do |reeks| %>
 				  <div data-role="collapsible" data-collapsed="true" data-theme="c" data-content-theme="d">
 				    <h4>
 				    	<div class="ui-grid-a">
 				    		<div class="ui-block-a">
-						    	<span><%= key %></span>
+						    	<span><%= reeks.first.context_class %></span>
 				    		</div>
 				    		<div class="ui-block-b">
-				    			<% if @reeks[key].size < 5 %>
-						    		<span id="nomal"><%= @reeks[key].size %>warnings</span>
-						    	<% elsif @reeks[key].size < 10 %>
-						    		<span id="caution"><%= @reeks[key].size %>warnings</span>
+				    			<% if reeks.size < 5 %>
+						    		<span id="nomal"><%= reeks.size %>warnings</span>
+						    	<% elsif reeks.size < 10 %>
+						    		<span id="caution"><%= reeks.size %>warnings</span>
 						    	<% else %>
-						    		<span id="danger"><%= @reeks[key].size %>warnings</span>
+						    		<span id="danger"><%= reeks.size %>warnings</span>
 						    	<% end %>
 				    		</div>
 				    	</div>
@@ -83,8 +83,8 @@
 				    			File Path
 				    		</li>
 				    		<li>		    			
-				    			<h4><span class="aside">File:</span><%= @reeks[key].first.location["source"].split("/").last %></h4><br>
-				    			<span class="aside">Path:</span><%= @reeks[key].first.location["source"] %>
+				    			<h4><span class="aside">File:</span><%= reeks.first.location["source"].split("/").last %></h4><br>
+				    			<span class="aside">Path:</span><%= reeks.first.location["source"] %>
 				    		</li>
 				    	</ul>
 					    <ul data-role="listview" data-inset="true" data-divider-theme="c">
@@ -94,7 +94,7 @@
 					    			<div class="ui-block-b">Warnings</div>
 					    		</div>
 					    	</li>
-					    <% @reeks[key].each do |smell| %>
+					    <% reeks.each do |smell| %>
 					    	<li>
 					    		<div class="ui-grid-a">
 					    			<div class="ui-block-a">

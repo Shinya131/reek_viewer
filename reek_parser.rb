@@ -33,6 +33,12 @@ class ReeksList
   def each_with_index
     @divide_reeks.each_with_index {| reeks, i | yield(reeks, i)}
   end
+  def context_class_list
+    @divide_reeks.map{|reeks| reeks.first.context_class}
+  end
+  def total_warning_num
+    @divide_reeks.flatten.size
+  end
 private
   def divide_by_context_class
     context_class_list = @raw_reeks.map{|reek| reek.context_class }.uniq
