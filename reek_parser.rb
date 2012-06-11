@@ -1,21 +1,21 @@
 require 'yaml'
-  
+
 class ReekYamlFile
   def initialize(path)
     @path = path
-    unless File.exist?(@path) : raise "no such file or directory" end
+    raise "no such file or directory" unless File.exist?(@path)
     file_load
-    unless file_yaml? : raise "input file is not YAML format" end
-    unless file_reek_output? : raise "input file is not reek output" end
+    raise "input file is not YAML format" unless file_yaml?
+    raise "input file is not reek output" unless file_reek_output?
   end
 
   def to_reeks; @content; end
-  
+
 private
   def file_load; File::open(@path) {|f| @content = YAML.load(f) }; end
 
   def file_yaml?; @content != false; end
-  
+
   def file_reek_output?; @content.first.class == Reek::SmellWarning; end
 end
 
