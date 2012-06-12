@@ -11,7 +11,7 @@
     context: Reek::SmellWarning
     lines:
     - 55
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: IrresponsibleModule
@@ -24,7 +24,7 @@
     context: ReekYamlFile
     lines:
     - 3
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: UncommunicativeName
@@ -37,7 +37,7 @@
     context: ReekYamlFile#file_load
     lines:
     - 15
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: IrresponsibleModule
@@ -50,7 +50,7 @@
     context: ReeksList
     lines:
     - 22
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: Duplication
@@ -65,7 +65,7 @@
     lines:
     - 44
     - 46
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: NestedIterators
@@ -78,7 +78,7 @@
     context: ReeksList#divide_by_context_class
     lines:
     - 46
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: UncommunicativeName
@@ -91,7 +91,7 @@
     context: ReeksList#each_with_index
     lines:
     - 34
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: UncommunicativeName
@@ -104,7 +104,7 @@
     context: ReeksList#sort_by_warning_num
     lines:
     - 50
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
 - !ruby/object:Reek::SmellWarning
   smell:
     class: UncommunicativeName
@@ -117,4 +117,43 @@
     context: ReeksList#sort_by_warning_num
     lines:
     - 50
-    source: /Users/praveeg/projects/reek_viewer//reek_parser.rb
+    source: /Users/praveeg/projects/reek_viewer/reek_parser.rb
+- !ruby/object:Reek::SmellWarning
+  smell:
+    class: IrresponsibleModule
+    subclass: IrresponsibleModule
+    message: has no descriptive comment
+    module_name: ReekViewer
+  status:
+    is_active: true
+  location:
+    context: ReekViewer
+    lines:
+    - 5
+    source: /Users/praveeg/projects/reek_viewer/reek_viewer.rb
+- !ruby/object:Reek::SmellWarning
+  smell:
+    class: LongMethod
+    subclass: TooManyStatements
+    message: has approx 7 statements
+    statement_count: 7
+  status:
+    is_active: true
+  location:
+    context: ReekViewer#generate_html
+    lines:
+    - 11
+    source: /Users/praveeg/projects/reek_viewer/reek_viewer.rb
+- !ruby/object:Reek::SmellWarning
+  smell:
+    class: UncommunicativeName
+    subclass: UncommunicativeVariableName
+    message: has the variable name 'f'
+    variable_name: f
+  status:
+    is_active: true
+  location:
+    context: ReekViewer#generate_html
+    lines:
+    - 20
+    source: /Users/praveeg/projects/reek_viewer/reek_viewer.rb
